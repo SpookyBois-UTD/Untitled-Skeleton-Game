@@ -33,10 +33,12 @@ autoplay = "BatFlying"
 anims/BatFlying = SubResource( 1 )
 
 [node name="TextEdit" type="TextEdit" parent="."]
-margin_right = 192.0
+margin_left = 1.0
+margin_right = 193.0
 margin_bottom = 123.0
 text = "Omer
-Marlon"
+Marlon
+Clayton"
 __meta__ = {
 "_edit_use_anchors_": false
 }
