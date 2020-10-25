@@ -35,7 +35,8 @@ anims/BatFlying = SubResource( 1 )
 [node name="TextEdit" type="TextEdit" parent="."]
 margin_right = 192.0
 margin_bottom = 123.0
-text = "Omer"
+text = "Omer
+Marlon"
 __meta__ = {
 "_edit_use_anchors_": false
 }
