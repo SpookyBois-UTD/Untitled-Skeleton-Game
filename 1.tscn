@@ -21,20 +21,22 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[node name="Level1" type="Node2D"]
+[node name="MainLoop" type="Node2D"]
 
-[node name="Bat" type="Node2D" parent="."]
-position = Vector2( 169.058, 165.09 )
+[node name="Level 1" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Bat"]
-texture = ExtResource( 1 )
-hframes = 6
+[node name="Pumpkin" type="Node2D" parent="Level 1"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Bat"]
-autoplay = "BatFlying"
-anims/BatFlying = SubResource( 1 )
+[node name="Dark" type="Sprite" parent="Level 1/Pumpkin"]
+position = Vector2( 136, 292 )
+texture = ExtResource( 2 )
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="Lit" type="Sprite" parent="Level 1/Pumpkin"]
+visible = false
+position = Vector2( 136, 291.561 )
+texture = ExtResource( 3 )
+
+[node name="TextEdit" type="TextEdit" parent="Level 1"]
 margin_left = 1.0
 margin_right = 193.0
 margin_bottom = 123.0
@@ -46,13 +48,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pumpkin" type="Node2D" parent="."]
+[node name="Bat" type="Node2D" parent="Level 1"]
+position = Vector2( 169.058, 165.09 )
 
-[node name="Dark" type="Sprite" parent="Pumpkin"]
-position = Vector2( 136, 292 )
-texture = ExtResource( 2 )
+[node name="Sprite" type="Sprite" parent="Level 1/Bat"]
+texture = ExtResource( 1 )
+hframes = 6
 
-[node name="Lit" type="Sprite" parent="Pumpkin"]
-visible = false
-position = Vector2( 136, 291.561 )
-texture = ExtResource( 3 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Level 1/Bat"]
+autoplay = "BatFlying"
+anims/BatFlying = SubResource( 1 )
