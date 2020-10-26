@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pumpkin_dark_bigger.png-c9469e0813be34e3198a68c49b7dee3d.stex"
+path="res://.import/pumpkin_light_bigger.png-1fc5a4986cd54aa404ced9b29f0c261c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pumpkin_dark_bigger.png"
-dest_files=[ "res://.import/pumpkin_dark_bigger.png-c9469e0813be34e3198a68c49b7dee3d.stex" ]
+source_file="res://Sprites/pumpkin_light_bigger.png"
+dest_files=[ "res://.import/pumpkin_light_bigger.png-1fc5a4986cd54aa404ced9b29f0c261c.stex" ]
 
 [params]
 
