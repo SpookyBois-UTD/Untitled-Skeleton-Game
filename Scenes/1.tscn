@@ -1,4 +1,0 @@
-[gd_scene format=2]
-
-[node name="icon" type="Sprite"]
-position = Vector2( 112.277, 172.047 )

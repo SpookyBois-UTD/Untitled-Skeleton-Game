@@ -6,13 +6,17 @@ extends KinematicBody2D
 # var b = "text"
 export (int) var speed = 200
 export (int) var gravity = 4000
+var _gravity
 export (int) var jump_power = -3000
+
+var onLadder = false
+
 var velocity = Vector2()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	_gravity = gravity
 	
 func get_input():
 	velocity.x = 0
@@ -22,6 +26,19 @@ func get_input():
 		move("left")
 	if Input.is_action_pressed("player_right"):
 		move("right")
+	
+	if(onLadder == true):
+		gravity = 0
+		if Input.is_action_pressed("player_up"):
+			climb("up")
+		elif Input.is_action_pressed("player_down"):
+			climb("down")
+		else:
+			velocity.y = 0
+	if(onLadder == false):
+		gravity = _gravity
+		
+	print_debug(gravity)
 
 #Moves the character left or right
 #Animation will make the skeleton look like it's hopping
@@ -32,16 +49,26 @@ func move(direction : String):
 	if(direction == "right"):
 		velocity.x += speed
 
+func climb(direction : String):
+	
+	if(direction == "up"):
+		velocity.y = -100
+		print_debug("Going up")
+	elif(direction == "down"):
+		velocity.y = 100
 #Makes the skeleton jump. This is higher then the standard hop while moving
 func jump():
 	if(is_on_floor()):
 		velocity.y = jump_power
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	get_input()
-	velocity.y += gravity * delta
+	
+	if(!is_on_floor() && !onLadder):
+		velocity.y += gravity * delta
 	#Moves the character in the velocity direction, the second parameter specifies what direction the floor is
-	move_and_slide(velocity, Vector2(0, -1))
+	print_debug(velocity.y)
+	velocity = move_and_slide(velocity, Vector2.UP)
+	
 	
