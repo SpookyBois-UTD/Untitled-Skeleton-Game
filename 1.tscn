@@ -55,6 +55,7 @@ position = Vector2( 169.058, 165.09 )
 [node name="Sprite" type="Sprite" parent="Level 1/Bat"]
 texture = ExtResource( 1 )
 hframes = 6
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Level 1/Bat"]
 autoplay = "BatFlying"
