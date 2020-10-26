@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GameJamUTD"
-run/main_scene="res://Sprites/GithubTest.tscn"
+run/main_scene="res://Scenes/Test.tscn"
 
 [display]
 
