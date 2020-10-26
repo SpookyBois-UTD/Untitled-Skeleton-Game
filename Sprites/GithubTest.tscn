@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/Batty-0001.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/pumpkin_dark_bigger.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/pumpkin_light_bigger.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Batty.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BatFlying"
@@ -55,11 +54,7 @@ position = Vector2( 169.058, 165.09 )
 [node name="Sprite" type="Sprite" parent="Level 1/Bat"]
 texture = ExtResource( 1 )
 hframes = 6
-frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Level 1/Bat"]
 autoplay = "BatFlying"
 anims/BatFlying = SubResource( 1 )
-
-[node name="Batty" parent="Level 1" instance=ExtResource( 4 )]
-position = Vector2( 403.073, 87.4066 )
