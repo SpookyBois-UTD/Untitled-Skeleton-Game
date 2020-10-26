@@ -4,11 +4,14 @@
 [ext_resource path="res://Scripts/SkeletonOneLeg.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.9668, 20.058 )
+extents = Vector2( 20.0812, 20.1257 )
 
 [node name="SkeletonOneLeg" type="KinematicBody2D"]
 position = Vector2( 100, 100 )
+collision_layer = 2
 script = ExtResource( 2 )
+gravity = 1000
+jump_power = -300
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -16,3 +19,7 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -3.8147e-06 )
 shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
