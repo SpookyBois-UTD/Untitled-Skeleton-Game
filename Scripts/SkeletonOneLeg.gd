@@ -54,7 +54,7 @@ func climb(direction : String):
 		velocity.y = -100
 	elif(direction == "down"):
 		velocity.y = 100
-#Makes the skeleton jump. This is higher then the standard hop while moving
+#Makes the skeleton jump.
 func jump():
 	if(is_on_floor()):
 		velocity.y = jump_power
