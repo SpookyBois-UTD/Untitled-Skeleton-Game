@@ -38,7 +38,6 @@ func get_input():
 	if(onLadder == false):
 		gravity = _gravity
 		
-	print_debug(gravity)
 
 #Moves the character left or right
 #Animation will make the skeleton look like it's hopping
@@ -53,7 +52,6 @@ func climb(direction : String):
 	
 	if(direction == "up"):
 		velocity.y = -100
-		print_debug("Going up")
 	elif(direction == "down"):
 		velocity.y = 100
 #Makes the skeleton jump. This is higher then the standard hop while moving
@@ -68,7 +66,6 @@ func _physics_process(delta):
 	if(!is_on_floor() && !onLadder):
 		velocity.y += gravity * delta
 	#Moves the character in the velocity direction, the second parameter specifies what direction the floor is
-	print_debug(velocity.y)
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	
