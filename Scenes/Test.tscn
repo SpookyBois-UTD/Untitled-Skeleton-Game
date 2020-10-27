@@ -13,7 +13,49 @@ jump_power = -400
 
 [node name="Platform" parent="." instance=ExtResource( 1 )]
 
-[node name="Platform2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 272.328, -113.569 )
+[node name="Platform3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 0 )
+
+[node name="Platform4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 127.712, 0 )
+
+[node name="Platform5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 191.712, 0 )
+
+[node name="Platform6" parent="." instance=ExtResource( 1 )]
+position = Vector2( -255.921, 0 )
+
+[node name="Platform7" parent="." instance=ExtResource( 1 )]
+position = Vector2( -191.921, 0 )
+
+[node name="Platform8" parent="." instance=ExtResource( 1 )]
+position = Vector2( -128.21, 0 )
+
+[node name="Platform9" parent="." instance=ExtResource( 1 )]
+position = Vector2( -64.2098, 0 )
+
+[node name="Platform10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 357.796, -104.652 )
+
+[node name="Platform11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 421.796, -104.652 )
+
+[node name="Platform12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 485.508, -104.652 )
+
+[node name="Platform13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 549.508, -104.652 )
+
+[node name="Platform14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 101.875, -104.652 )
+
+[node name="Platform15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 165.875, -104.652 )
+
+[node name="Platform16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 229.586, -104.652 )
+
+[node name="Platform17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 293.586, -104.652 )
 
 [node name="ladder" parent="." instance=ExtResource( 3 )]
