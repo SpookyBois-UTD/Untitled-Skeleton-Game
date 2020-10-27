@@ -16,11 +16,12 @@ func _ready():
 #	pass
 
 
-func _on_Ladder_body_entered(body):
+func _on_ladder_body_entered(body):
 	if(body.name == "SkeletonOneLeg"):
+		print_debug("Entered")
 		get_node("../SkeletonOneLeg").onLadder = true
 
 
-func _on_Ladder_body_exited(body):
-	if(body.name == "SkeletonOneLeg"):
-		get_node("../SkeletonOneLeg").onLadder = false
+func _on_ladder_body_exited(body):
+		if(body.name == "SkeletonOneLeg"):
+			get_node("../SkeletonOneLeg").onLadder = false
