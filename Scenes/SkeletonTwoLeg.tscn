@@ -9,6 +9,7 @@ extents = Vector2( 19.9668, 20.058 )
 [node name="SkeletonTwoLeg" type="KinematicBody2D"]
 position = Vector2( 100, 100 )
 collision_layer = 2
+collision_mask = 13
 script = ExtResource( 2 )
 speed = 300
 gravity = 1000
