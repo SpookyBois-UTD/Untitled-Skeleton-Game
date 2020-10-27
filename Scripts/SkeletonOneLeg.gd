@@ -1,6 +1,12 @@
 extends KinematicBody2D
 
-
+enum Anim{
+	Walking,
+	Running,
+	Climbing,
+	ClimbingIdle,
+	Idle
+}
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -9,10 +15,10 @@ export (int) var gravity = 4000
 var _gravity
 export (int) var jump_power = -3000
 var invincibility_frames = 1.5
-
-
+var faceRight = true
+var state
 var onLadder = false
-
+var isWalking = false
 var velocity = Vector2()
 
 
@@ -28,8 +34,24 @@ func get_input():
 		jump()
 	if Input.is_action_pressed("player_left"):
 		move("left")
-	if Input.is_action_pressed("player_right"):
+		faceRight = false
+		if(is_on_floor()):
+			isWalking = true
+			state = Anim.Walking
+			Animate()
+		changeDir()
+	elif Input.is_action_pressed("player_right"):
 		move("right")
+		faceRight = true
+		if(is_on_floor()):
+			isWalking = true
+			state = Anim.Walking
+			Animate()
+		changeDir()
+	elif (!state == Anim.Climbing):
+		state = Anim.Idle
+		Animate()
+		
 	
 	if(onLadder == true):
 		gravity = 0
@@ -39,6 +61,9 @@ func get_input():
 			climb("down")
 		else:
 			velocity.y = 0
+			if (!is_on_floor()):
+				state = Anim.ClimbingIdle
+				Animate()
 	if(onLadder == false):
 		gravity = _gravity
 		
@@ -58,6 +83,9 @@ func climb(direction : String):
 		velocity.y = -100
 	elif(direction == "down"):
 		velocity.y = 100
+	
+	state = Anim.Climbing
+	Animate()
 #Makes the skeleton jump.
 func jump():
 	if(is_on_floor()):
@@ -93,3 +121,19 @@ func _on_Timer_timeout():
 	$Timer.stop()
 	$Sprite.set_visible(true)
 	set_collision_layer_bit(1, true)
+
+func Animate():
+	if(state == Anim.Climbing):
+		$AnimationPlayer.play("Climbing")
+	elif(state == Anim.Walking):
+		$AnimationPlayer.play("Walking")
+	elif(state == Anim.ClimbingIdle):
+		$AnimationPlayer.play("IdleBack")
+	else:
+		$AnimationPlayer.play("IdleSide")
+
+func changeDir():
+	if(faceRight):
+		$Sprite.set_flip_h(false)
+	else:
+		$Sprite.set_flip_h(true)
