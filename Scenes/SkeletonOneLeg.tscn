@@ -3,7 +3,7 @@
 [ext_resource path="res://Player/SosJWaQ.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/SkeletonOneLeg.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=3]
 resource_name = "Climbing"
 length = 0.3
 loop = true
@@ -20,7 +20,7 @@ tracks/0/keys = {
 "values": [ 9, 10, 11 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=5]
 resource_name = "IdleBack"
 length = 0.1
 tracks/0/type = "value"
@@ -36,7 +36,7 @@ tracks/0/keys = {
 "values": [ 10 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 resource_name = "IdleSide"
 length = 0.1
 tracks/0/type = "value"
@@ -52,7 +52,8 @@ tracks/0/keys = {
 "values": [ 7 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
+resource_name = "Walking"
 length = 0.3
 loop = true
 tracks/0/type = "value"
@@ -68,7 +69,7 @@ tracks/0/keys = {
 "values": [ 6, 7, 8 ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.6048, 20.8978 )
 
 [node name="SkeletonOneLeg" type="KinematicBody2D"]
@@ -89,12 +90,12 @@ frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "IdleSide"
-anims/Climbing = SubResource( 1 )
-anims/IdleBack = SubResource( 2 )
-anims/IdleSide = SubResource( 3 )
-anims/Walking = SubResource( 4 )
+anims/Climbing = SubResource( 3 )
+anims/IdleBack = SubResource( 5 )
+anims/IdleSide = SubResource( 4 )
+anims/Walking = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.514244, 3.73849 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
