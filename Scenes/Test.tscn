@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/SkeletonOneLeg.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ladder.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Batty.tscn" type="PackedScene" id=4]
 
 [node name="Test" type="Node2D"]
 position = Vector2( 226.697, 237.488 )
@@ -60,6 +59,3 @@ position = Vector2( 229.586, -104.652 )
 position = Vector2( 293.586, -104.652 )
 
 [node name="ladder" parent="." instance=ExtResource( 3 )]
-
-[node name="Batty" parent="." instance=ExtResource( 4 )]
-position = Vector2( -30.6916, -69.8378 )

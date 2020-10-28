@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/IdleSide.tres" type="Animation" id=1]
-[ext_resource path="res://Scripts/SkeletonTwoLeg.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/SkeletonTwoArm.gd" type="Script" id=2]
 [ext_resource path="res://Player/IdleBack.tres" type="Animation" id=3]
 [ext_resource path="res://Player/Walking.tres" type="Animation" id=4]
 [ext_resource path="res://Player/Climbing.tres" type="Animation" id=5]
@@ -10,11 +10,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.6349, 21.588 )
 
-[node name="SkeletonTwoLeg" type="KinematicBody2D"]
+[node name="SkeletonTwoArm" type="KinematicBody2D"]
 position = Vector2( 100, 100 )
 collision_layer = 2
 script = ExtResource( 2 )
-speed = 250
 gravity = 1000
 jump_power = -300
 run_speed = 300
