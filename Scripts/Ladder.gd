@@ -17,11 +17,13 @@ func _ready():
 
 
 func _on_ladder_body_entered(body):
-	if(body.name == "SkeletonOneLeg"):
+	if body.get_collision_layer_bit(1) && body.has_method("is_on_ladder"):
 		print_debug("Entered")
-		get_node("../SkeletonOneLeg").onLadder = true
+		#get_node("../SkeletonOneLeg").onLadder = true
+		body.is_on_ladder(true)
 
 
 func _on_ladder_body_exited(body):
-		if(body.name == "SkeletonOneLeg"):
-			get_node("../SkeletonOneLeg").onLadder = false
+		if body.get_collision_layer_bit(1) &&body.has_method("is_on_ladder"):
+			#get_node("../SkeletonOneLeg").onLadder = false
+			body.is_on_ladder(false)

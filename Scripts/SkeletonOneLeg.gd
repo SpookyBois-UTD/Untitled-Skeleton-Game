@@ -137,3 +137,6 @@ func changeDir():
 		$Sprite.set_flip_h(false)
 	else:
 		$Sprite.set_flip_h(true)
+
+func is_on_ladder(status : bool):
+	onLadder = status

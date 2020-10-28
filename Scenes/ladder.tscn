@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Ladder.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/1ed85433afb10681f1a937d287892993.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.8007, 29.8579 )
 
 [node name="ladder" type="Area2D"]
@@ -19,6 +19,6 @@ scale = Vector2( 0.293647, 0.293647 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_ladder_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_ladder_body_exited"]
