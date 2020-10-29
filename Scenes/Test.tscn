@@ -73,7 +73,9 @@ position = Vector2( 49.361, -79.0289 )
 position = Vector2( -15.9509, -63.929 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+[connection signal="game_over" from="SkeletonOneLeg" to="GUI" method="_on_SkeletonOneLeg_game_over"]
 [connection signal="health_changed" from="SkeletonOneLeg" to="GUI" method="_on_SkeletonOneLeg_health_changed"]
+[connection signal="restart_level" from="GUI" to="SkeletonOneLeg" method="_on_GUI_restart_level"]
 
 [editable path="SkeletonOneLeg"]
 

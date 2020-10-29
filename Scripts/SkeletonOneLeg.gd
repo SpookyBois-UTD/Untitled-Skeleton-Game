@@ -20,8 +20,11 @@ var state
 #var onLadder = false
 var isWalking = false
 var velocity = Vector2()
+
 var health = 3
 signal health_changed(health)
+var level = "res://Scenes/Test.tscn" # Change scene for each skeleton phase
+signal game_over(level)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -99,7 +102,7 @@ func take_damage():
 	health -= 1
 	emit_signal("health_changed", health)
 	if health == 0:
-		get_tree().change_scene("res://Scenes/Test.tscn") # Change scene for each skeleton phase
+		emit_signal("game_over", level)
 	elif health > 0:
 		$Timer.set_paused(false)
 		$Timer.start(invincibility_frames)
@@ -146,3 +149,8 @@ func changeDir():
 	else:
 		$Sprite.set_flip_h(true)
 
+
+
+
+func _on_GUI_restart_level():
+	get_tree().change_scene(level)
