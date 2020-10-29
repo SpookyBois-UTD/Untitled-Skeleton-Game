@@ -20,19 +20,16 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 28.5803, 11.8538 )
+extents = Vector2( 25.8538, 9.43247 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 28.6691, 12.0927 )
 
 [node name="Batty" type="KinematicBody2D"]
-position = Vector2( 175.073, 77.4066 )
+position = Vector2( 0.0491257, 0.0713577 )
 collision_layer = 4
 collision_mask = 5
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.297302, -4.16223 )
@@ -47,9 +44,6 @@ anims/fly = SubResource( 1 )
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="PlayerCollision" type="Area2D" parent="."]
 collision_layer = 4

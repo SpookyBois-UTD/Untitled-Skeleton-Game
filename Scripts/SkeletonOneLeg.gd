@@ -20,7 +20,8 @@ var state
 #var onLadder = false
 var isWalking = false
 var velocity = Vector2()
-
+var health = 3
+signal health_changed(health)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -95,9 +96,14 @@ func jump():
 #Called when player makes contact with an enemy
 #Invicibility will be activated if still "alive"
 func take_damage():
-	$Timer.set_paused(false)
-	$Timer.start(invincibility_frames)
-	set_collision_layer_bit(1, false)
+	health -= 1
+	emit_signal("health_changed", health)
+	if health == 0:
+		get_tree().change_scene("res://Scenes/Test.tscn") # Change scene for each skeleton phase
+	elif health > 0:
+		$Timer.set_paused(false)
+		$Timer.start(invincibility_frames)
+		set_collision_layer_bit(1, false)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
