@@ -30,6 +30,6 @@ func _process(delta):
 	velocity = move_and_slide(velocity,Vector2.UP)
 
 #Checks to see if the player collision node has collided with a node on the player layer
-func _on_PlayerCollision_body_entered(body : KinematicBody2D):
+func _on_PlayerCollision_body_entered(body):
 	if body.get_collision_layer_bit(1) && body.has_method("take_damage"):
 		body.take_damage()
