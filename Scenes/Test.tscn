@@ -59,3 +59,4 @@ position = Vector2( 229.586, -104.652 )
 position = Vector2( 293.586, -104.652 )
 
 [node name="ladder" parent="." instance=ExtResource( 3 )]
+position = Vector2( 49.361, -79.0289 )
