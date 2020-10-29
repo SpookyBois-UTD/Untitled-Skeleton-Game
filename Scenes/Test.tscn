@@ -60,3 +60,18 @@ position = Vector2( 293.586, -104.652 )
 
 [node name="ladder" parent="." instance=ExtResource( 3 )]
 position = Vector2( 49.361, -79.0289 )
+<<<<<<< HEAD
+=======
+
+[node name="Batty" parent="." instance=ExtResource( 4 )]
+position = Vector2( -15.9509, -63.929 )
+
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+[connection signal="game_over" from="SkeletonOneLeg" to="GUI" method="_on_SkeletonOneLeg_game_over"]
+[connection signal="health_changed" from="SkeletonOneLeg" to="GUI" method="_on_SkeletonOneLeg_health_changed"]
+[connection signal="restart_level" from="GUI" to="SkeletonOneLeg" method="_on_GUI_restart_level"]
+
+[editable path="SkeletonOneLeg"]
+
+[editable path="GUI"]
+>>>>>>> a40b850e6081d18d87a4827a00f37707456b16f2
