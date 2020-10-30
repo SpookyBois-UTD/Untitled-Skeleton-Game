@@ -15,6 +15,8 @@ signal game_over(level)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var boneNode = get_tree().get_root().find_node("Bone", true, false)
+	boneNode.connect("bone_collected", self, "collected_bone")
 	$Timer.set_paused(true)
 	$Timer.set_wait_time(invincibility_frames)
 	$AnimationPlayer.set_current_animation("Hopping")
@@ -73,6 +75,8 @@ func _on_Timer_timeout():
 	$Sprite.set_visible(true)
 	set_collision_layer_bit(1, true)
 
+func collected_bone():
+	get_parent().acquire_bone()
 
 
 func _on_GUI_restart_level():
