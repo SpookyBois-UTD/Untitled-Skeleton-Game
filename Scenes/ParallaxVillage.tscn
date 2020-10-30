@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Backgrounds/Village_bottom_bg.png" type="Texture" id=1]
+[ext_resource path="res://Backgrounds/Village_middle_bg.png" type="Texture" id=2]
+[ext_resource path="res://Backgrounds/Village_top_bg.png" type="Texture" id=3]
+
+[node name="VillageBG" type="ParallaxBackground"]
+scroll_offset = Vector2( 0, 19 )
+scroll_base_scale = Vector2( 0.3, 0 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [ 611.786 ]
+}
+
+[node name="back hills" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 612, 0 )
+
+[node name="bg" type="Sprite" parent="back hills"]
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="middle hills" type="ParallaxLayer" parent="."]
+light_mask = 0
+motion_scale = Vector2( 0.6, 0.8 )
+motion_mirroring = Vector2( 612, 0 )
+
+[node name="bg" type="Sprite" parent="middle hills"]
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="front hills" type="ParallaxLayer" parent="."]
+light_mask = 0
+motion_scale = Vector2( 0.9, 0.9 )
+motion_mirroring = Vector2( 612, 0 )
+
+[node name="bg" type="Sprite" parent="front hills"]
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 3 )
+centered = false
