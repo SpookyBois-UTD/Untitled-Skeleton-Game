@@ -4,9 +4,9 @@
 [ext_resource path="res://Scenes/Milk.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ladder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Batty.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Stuff.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Bone.tscn" type="PackedScene" id=8]
 
 [node name="Test" type="Node2D"]
 position = Vector2( 226.697, 237.488 )
@@ -64,6 +64,8 @@ position = Vector2( 49.361, -79.0289 )
 [node name="Batty" parent="." instance=ExtResource( 4 )]
 position = Vector2( -17.8408, -47.55 )
 
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+
 [node name="Milk" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -83 )
 
@@ -76,5 +78,4 @@ texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 401, 165, 32, 32 )
 
-[node name="Bone" parent="." instance=ExtResource( 8 )]
-position = Vector2( -126.81, -50.7238 )
+[editable path="GUI"]
