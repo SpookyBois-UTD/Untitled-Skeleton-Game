@@ -37,4 +37,7 @@ anims/Climbing = ExtResource( 5 )
 anims/IdleBack = ExtResource( 3 )
 anims/IdleSide = ExtResource( 1 )
 anims/Walking = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

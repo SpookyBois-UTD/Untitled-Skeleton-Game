@@ -144,11 +144,3 @@ __meta__ = {
 [node name="SkeletonHead" parent="." instance=ExtResource( 4 )]
 position = Vector2( 142.828, 246.945 )
 gravity = 3000
-
-[node name="Camera2D" type="Camera2D" parent="SkeletonHead"]
-position = Vector2( 3.23346, 27.7132 )
-current = true
-limit_left = -36
-limit_right = 3458
-limit_bottom = 1285
-smoothing_enabled = true

@@ -36,4 +36,7 @@ anims/Walking = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.514244, 3.73849 )
 shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
