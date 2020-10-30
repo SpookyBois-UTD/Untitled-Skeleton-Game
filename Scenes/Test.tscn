@@ -1,23 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/SkeletonOneLeg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Milk.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ladder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Batty.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Stuff.png" type="Texture" id=7]
 
 [node name="Test" type="Node2D"]
 position = Vector2( 226.697, 237.488 )
-
-[node name="SkeletonOneLeg" parent="." instance=ExtResource( 2 )]
-position = Vector2( -117.996, -67.5802 )
-jump_power = -400
-
-[node name="Sprite" parent="SkeletonOneLeg" index="1"]
-frame = 9
-
-[node name="Camera2D" type="Camera2D" parent="SkeletonOneLeg"]
-current = true
 
 [node name="Platform" parent="." instance=ExtResource( 1 )]
 
@@ -40,7 +32,7 @@ position = Vector2( -191.921, 0 )
 position = Vector2( -128.21, 0 )
 
 [node name="Platform9" parent="." instance=ExtResource( 1 )]
-position = Vector2( -64.2098, 0 )
+position = Vector2( -64.21, 0 )
 
 [node name="Platform10" parent="." instance=ExtResource( 1 )]
 position = Vector2( 357.796, -104.652 )
@@ -70,13 +62,20 @@ position = Vector2( 293.586, -104.652 )
 position = Vector2( 49.361, -79.0289 )
 
 [node name="Batty" parent="." instance=ExtResource( 4 )]
-position = Vector2( -15.9509, -63.929 )
+position = Vector2( -17.8408, -47.55 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
-[connection signal="game_over" from="SkeletonOneLeg" to="GUI" method="_on_SkeletonOneLeg_game_over"]
-[connection signal="health_changed" from="SkeletonOneLeg" to="GUI" method="_on_SkeletonOneLeg_health_changed"]
-[connection signal="restart_level" from="GUI" to="SkeletonOneLeg" method="_on_GUI_restart_level"]
 
-[editable path="SkeletonOneLeg"]
+[node name="Milk" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -83 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( -194.255, -64.0665 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 64, 0 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 401, 165, 32, 32 )
 
 [editable path="GUI"]

@@ -11,9 +11,9 @@ enum Anim{
 # var a = 2
 # var b = "text"
 export (int) var speed = 200
-export (int) var gravity = 4000
+export (int) var gravity = 3000
 var _gravity
-export (int) var jump_power = -3000
+export (int) var jump_power = -500
 var invincibility_frames = 1.5
 var faceRight = true
 var state
@@ -107,6 +107,11 @@ func take_damage():
 		$Timer.set_paused(false)
 		$Timer.start(invincibility_frames)
 		set_collision_layer_bit(1, false)
+		
+func heal():
+	if health < 3:
+		health += 1
+		emit_signal("health_changed", health)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -154,3 +159,7 @@ func changeDir():
 
 func _on_GUI_restart_level():
 	get_tree().change_scene(level)
+
+
+func _on_Batty_stomped():
+	velocity.y = jump_power
