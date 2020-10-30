@@ -27,3 +27,11 @@ func _on_SkeletonOneLeg_game_over(level):
 func _on_Restart_Button_pressed():
 	game_over_screen.hide()
 	emit_signal("restart_level")
+
+
+func _on_KinematicBody2D_health_changed(health):
+	emit_signal("health_changed", health)
+
+
+func _on_KinematicBody2D_game_over(level):
+	game_over_screen.show()

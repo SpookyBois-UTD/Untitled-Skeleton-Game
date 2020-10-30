@@ -11,9 +11,9 @@ enum Anim{
 # var a = 2
 # var b = "text"
 export (int) var speed = 200
-export (int) var gravity = 4000
+export (int) var gravity = 3000
 var _gravity
-export (int) var jump_power = -3000
+export (int) var jump_power = -500
 var invincibility_frames = 1.5
 var faceRight = true
 var state
