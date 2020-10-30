@@ -22,22 +22,27 @@ func _ready():
 		scene = load("res://Scenes/SkeletonHead.tscn")
 		player_body = scene.instance()
 		add_child(player_body)
+		get_child(0).global_position = self.global_position
 	elif(status == limbs.ONE_LEG):
 		scene = load("res://Scenes/SkeletonOneLeg.tscn")
 		player_body = scene.instance()
 		add_child(player_body)
+		get_child(0).global_position = self.global_position
 	elif(status == limbs.TWO_LEGS):
 		scene = load("res://Scenes/SkeletonTwoLeg.tscn")
 		player_body = scene.instance()
 		add_child(player_body)
+		get_child(0).global_position = self.global_position
 	elif(status == limbs.ONE_ARM):
 		scene = load("res://Scenes/SkeletonOneArm.tscn")
 		player_body = scene.instance()
 		add_child(player_body)
+		get_child(0).global_position = self.global_position
 	elif(status == limbs.TWO_ARMS):
 		scene = load("res://Scenes/SkeletonTwoArm.tscn")
 		player_body = scene.instance()
 		add_child(player_body)
+		get_child(0).global_position = self.global_position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
