@@ -21,6 +21,10 @@ func move(direction : String):
 		velocity.x -= actual_speed
 	if(direction == "right"):
 		velocity.x += actual_speed
+		
+func jump():
+	if(is_on_floor()):
+		velocity.y = jump_power*1.75
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
