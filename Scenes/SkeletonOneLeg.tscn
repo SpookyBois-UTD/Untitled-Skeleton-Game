@@ -44,4 +44,5 @@ shape = SubResource( 1 )
 current = true
 [connection signal="game_over" from="." to="GUI" method="_on_SkeletonOneLeg_game_over"]
 [connection signal="health_changed" from="." to="GUI" method="_on_SkeletonOneLeg_health_changed"]
+[connection signal="restart_level" from="GUI" to="." method="_on_GUI_restart_level"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
