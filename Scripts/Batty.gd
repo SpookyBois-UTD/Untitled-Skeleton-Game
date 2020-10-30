@@ -46,3 +46,4 @@ func _on_Hurtbox_body_entered(body):
 	$Hurtbox.set_collision_layer_bit(2, false)
 	$Hurtbox.set_collision_mask_bit(1, false)
 	queue_free()
+

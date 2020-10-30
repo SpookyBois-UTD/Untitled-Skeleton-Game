@@ -107,6 +107,11 @@ func take_damage():
 		$Timer.set_paused(false)
 		$Timer.start(invincibility_frames)
 		set_collision_layer_bit(1, false)
+		
+func heal():
+	if health < 3:
+		health += 1
+		emit_signal("health_changed", health)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

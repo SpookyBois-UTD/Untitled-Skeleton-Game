@@ -35,3 +35,4 @@ func _on_KinematicBody2D_health_changed(health):
 
 func _on_KinematicBody2D_game_over(level):
 	game_over_screen.show()
+
