@@ -6,6 +6,7 @@ var velocity = Vector2()
 export var direction = -1 # 1 = move right/down, -1 = move left/up
 var height = -20
 var vDir = 1
+signal stomped()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,3 +34,15 @@ func _process(delta):
 func _on_PlayerCollision_body_entered(body):
 	if body.get_collision_layer_bit(1) && body.has_method("take_damage"):
 		body.take_damage()
+
+
+func _on_Hurtbox_body_entered(body):
+	emit_signal("stomped")
+	velocity.x = 0
+	velocity.y = 0
+	set_collision_layer_bit(2, false)
+	$PlayerCollision.set_collision_layer_bit(2, false)
+	$PlayerCollision.set_collision_mask_bit(1, false)
+	$Hurtbox.set_collision_layer_bit(2, false)
+	$Hurtbox.set_collision_mask_bit(1, false)
+	queue_free()

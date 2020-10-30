@@ -65,7 +65,8 @@ position = Vector2( -17.8408, -47.55 )
 [node name="GUI" parent="." instance=ExtResource( 5 )]
 
 [node name="SkeletonOneLeg" parent="." instance=ExtResource( 2 )]
-position = Vector2( -134.345, -60.01 )
+position = Vector2( -134.345, -59.01 )
 jump_power = -500
+[connection signal="stomped" from="Batty" to="SkeletonOneLeg" method="_on_Batty_stomped"]
 
 [editable path="GUI"]

@@ -154,3 +154,7 @@ func changeDir():
 
 func _on_GUI_restart_level():
 	get_tree().change_scene(level)
+
+
+func _on_Batty_stomped():
+	velocity.y = jump_power
