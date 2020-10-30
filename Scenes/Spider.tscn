@@ -1,11 +1,30 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/Spider.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Spider.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.2764, 22.0093 )
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.2764, 22.0093 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Spider"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+}
 
 [node name="Spider" type="KinematicBody2D"]
 position = Vector2( 81.7511, 72.2267 )
@@ -15,8 +34,11 @@ gravity = 5000
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+hframes = 8
+frame = 7
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
 
 [node name="EntityCollision" type="Area2D" parent="."]
@@ -24,8 +46,12 @@ collision_layer = 4
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntityCollision"]
+visible = false
 shape = SubResource( 2 )
 
 [node name="FlipBuffer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Spider = SubResource( 3 )
 [connection signal="body_entered" from="EntityCollision" to="." method="_on_EntityCollision_body_entered"]
 [connection signal="timeout" from="FlipBuffer" to="." method="_on_FlipBuffer_timeout"]

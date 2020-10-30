@@ -23,16 +23,17 @@ export (bool) var flip = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Sprite.set_flip_h(flip)
-	if(state == crawling_on.GROUND && !$Sprite.is_flipped_h()):
+	$AnimationPlayer.play("Spider")
+	if(state == crawling_on.GROUND && $Sprite.is_flipped_h()):
 		ground = Vector2.UP
 		$Sprite.set_rotation_degrees(0)
-	elif(state == crawling_on.CEILING && !$Sprite.is_flipped_h()):
+	elif(state == crawling_on.CEILING && $Sprite.is_flipped_h()):
 		ground = Vector2.DOWN
 		$Sprite.set_rotation_degrees(180)
-	elif(state == crawling_on.WALL_RIGHT && !$Sprite.is_flipped_h()):
+	elif(state == crawling_on.WALL_RIGHT && $Sprite.is_flipped_h()):
 		ground = Vector2.RIGHT
 		$Sprite.set_rotation_degrees(90)
-	elif(state == crawling_on.WALL_LEFT && !$Sprite.is_flipped_h()):
+	elif(state == crawling_on.WALL_LEFT && $Sprite.is_flipped_h()):
 		ground = Vector2.LEFT
 		$Sprite.set_rotation_degrees(270)
 
@@ -46,7 +47,7 @@ func check_for_direction():
 		stopped = false
 		$FlipBuffer.set_paused(stopped)
 		$FlipBuffer.start(0.1)
-		if(state == crawling_on.GROUND && !$Sprite.is_flipped_h()):
+		if(state == crawling_on.GROUND && $Sprite.is_flipped_h()):
 			$Sprite.set_rotation_degrees(270)
 			state = crawling_on.WALL_LEFT
 			ground = Vector2.LEFT
@@ -54,7 +55,7 @@ func check_for_direction():
 			$Sprite.set_rotation_degrees(90)
 			state = crawling_on.WALL_RIGHT
 			ground = Vector2.RIGHT
-		elif(state == crawling_on.WALL_LEFT && !$Sprite.is_flipped_h()):
+		elif(state == crawling_on.WALL_LEFT && $Sprite.is_flipped_h()):
 			$Sprite.set_rotation_degrees(180)
 			state = crawling_on.CEILING
 			ground = Vector2.DOWN
@@ -62,7 +63,7 @@ func check_for_direction():
 			$Sprite.set_rotation_degrees(0)
 			state = crawling_on.GROUND
 			ground = Vector2.UP
-		elif(state == crawling_on.CEILING && !$Sprite.is_flipped_h()):
+		elif(state == crawling_on.CEILING && $Sprite.is_flipped_h()):
 			$Sprite.set_rotation_degrees(90)
 			state = crawling_on.WALL_RIGHT
 			ground = Vector2.RIGHT
@@ -70,7 +71,7 @@ func check_for_direction():
 			$Sprite.set_rotation_degrees(270)
 			state = crawling_on.WALL_LEFT
 			ground = Vector2.LEFT
-		elif(state == crawling_on.WALL_RIGHT && !$Sprite.is_flipped_h()):
+		elif(state == crawling_on.WALL_RIGHT && $Sprite.is_flipped_h()):
 			$Sprite.set_rotation_degrees(0)
 			state = crawling_on.GROUND
 			ground = Vector2.UP
@@ -82,7 +83,7 @@ func check_for_direction():
 		stopped = false
 		$FlipBuffer.set_paused(stopped)
 		$FlipBuffer.start(0.1)
-		if(state == crawling_on.GROUND && !$Sprite.is_flipped_h()):
+		if(state == crawling_on.GROUND && $Sprite.is_flipped_h()):
 			$Sprite.set_rotation_degrees(90)
 			state = crawling_on.WALL_RIGHT
 			ground = Vector2.RIGHT
@@ -90,7 +91,7 @@ func check_for_direction():
 			$Sprite.set_rotation_degrees(270)
 			state = crawling_on.WALL_LEFT
 			ground = Vector2.LEFT
-		elif(state == crawling_on.WALL_LEFT && !$Sprite.is_flipped_h()):
+		elif(state == crawling_on.WALL_LEFT && $Sprite.is_flipped_h()):
 			$Sprite.set_rotation_degrees(0)
 			state = crawling_on.GROUND
 			ground = Vector2.UP
@@ -98,7 +99,7 @@ func check_for_direction():
 			$Sprite.set_rotation_degrees(180)
 			state = crawling_on.CEILING
 			ground = Vector2.DOWN
-		elif(state == crawling_on.CEILING && !$Sprite.is_flipped_h()):
+		elif(state == crawling_on.CEILING && $Sprite.is_flipped_h()):
 			$Sprite.set_rotation_degrees(270)
 			state = crawling_on.WALL_LEFT
 			ground = Vector2.LEFT
@@ -106,7 +107,7 @@ func check_for_direction():
 			$Sprite.set_rotation_degrees(90)
 			state = crawling_on.WALL_RIGHT
 			ground = Vector2.RIGHT
-		elif(state == crawling_on.WALL_RIGHT && !$Sprite.is_flipped_h()):
+		elif(state == crawling_on.WALL_RIGHT && $Sprite.is_flipped_h()):
 			$Sprite.set_rotation_degrees(180)
 			state = crawling_on.CEILING
 			ground = Vector2.DOWN
@@ -118,25 +119,25 @@ func check_for_direction():
 #moves the spider in the directions set by check_for_direction. Uses delta from _physics_process to calculate gravity
 func move(delta):
 	check_for_direction()
-	if(state == crawling_on.GROUND && !$Sprite.is_flipped_h()):
+	if(state == crawling_on.GROUND && $Sprite.is_flipped_h()):
 		velocity.x = -speed
 		velocity.y = gravity * delta
 	elif(state == crawling_on.GROUND):
 		velocity.x = speed
 		velocity.y = gravity * delta
-	elif(state == crawling_on.WALL_LEFT && !$Sprite.is_flipped_h()):
+	elif(state == crawling_on.WALL_LEFT && $Sprite.is_flipped_h()):
 		velocity.y = speed
 		velocity.x = gravity * delta
 	elif(state == crawling_on.WALL_LEFT):
 		velocity.y = -speed
 		velocity.x = gravity * delta
-	elif(state == crawling_on.CEILING && !$Sprite.is_flipped_h()):
+	elif(state == crawling_on.CEILING && $Sprite.is_flipped_h()):
 		velocity.x = speed
 		velocity.y = -gravity * delta
 	elif(state == crawling_on.CEILING):
 		velocity.x = -speed
 		velocity.y = -gravity * delta
-	elif(state == crawling_on.WALL_RIGHT && !$Sprite.is_flipped_h()):
+	elif(state == crawling_on.WALL_RIGHT && $Sprite.is_flipped_h()):
 		velocity.y = -speed
 		velocity.x = -gravity * delta
 	else:
