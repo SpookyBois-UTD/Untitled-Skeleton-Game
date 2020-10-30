@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CalWalkingFrame.png-952c973203cc4fe8f10eeda5064921d4.stex"
+path="res://.import/CalHeadWalkingFrame.png-b75de14bf149f2032848634b9db51bc8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/CalWalkingFrame.png"
-dest_files=[ "res://.import/CalWalkingFrame.png-952c973203cc4fe8f10eeda5064921d4.stex" ]
+source_file="res://Sprites/CalHeadWalkingFrame.png"
+dest_files=[ "res://.import/CalHeadWalkingFrame.png-b75de14bf149f2032848634b9db51bc8.stex" ]
 
 [params]
 
