@@ -64,6 +64,12 @@ func take_damage():
 		$Timer.start(invincibility_frames)
 		set_collision_layer_bit(1, false)
 
+func heal():
+	if health < 3:
+		health += 1
+		emit_signal("health_changed", health)
+		
+
 func changeDir():
 	if(faceRight):
 		$Sprite.set_flip_h(false)
