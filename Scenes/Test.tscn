@@ -1,23 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/SkeletonOneLeg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Milk.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ladder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Batty.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/SkeletonOneLeg.tscn" type="PackedScene" id=6]
 
 [node name="Test" type="Node2D"]
 position = Vector2( 226.697, 237.488 )
-
-[node name="SkeletonOneLeg" parent="." instance=ExtResource( 2 )]
-position = Vector2( -117.996, -67.5802 )
-jump_power = -400
-
-[node name="Sprite" parent="SkeletonOneLeg" index="1"]
-frame = 9
-
-[node name="Camera2D" type="Camera2D" parent="SkeletonOneLeg"]
-current = true
 
 [node name="Platform" parent="." instance=ExtResource( 1 )]
 
@@ -70,13 +61,15 @@ position = Vector2( 293.586, -104.652 )
 position = Vector2( 49.361, -79.0289 )
 
 [node name="Batty" parent="." instance=ExtResource( 4 )]
-position = Vector2( -15.9509, -63.929 )
+position = Vector2( -17.8408, -47.55 )
+
+[node name="SkeletonOneLeg" parent="." instance=ExtResource( 6 )]
+position = Vector2( -117.808, -58.833 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
-[connection signal="game_over" from="SkeletonOneLeg" to="GUI" method="_on_SkeletonOneLeg_game_over"]
-[connection signal="health_changed" from="SkeletonOneLeg" to="GUI" method="_on_SkeletonOneLeg_health_changed"]
-[connection signal="restart_level" from="GUI" to="SkeletonOneLeg" method="_on_GUI_restart_level"]
 
-[editable path="SkeletonOneLeg"]
+[node name="Milk" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -83 )
+[connection signal="health_changed" from="SkeletonOneLeg" to="GUI" method="_on_SkeletonOneLeg_health_changed"]
 
 [editable path="GUI"]
