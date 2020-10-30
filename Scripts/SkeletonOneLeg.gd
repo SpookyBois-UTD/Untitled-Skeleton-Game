@@ -28,6 +28,8 @@ signal game_over(level)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var boneNode = get_tree().get_root().find_node("Bone", true, false)
+	boneNode.connect("bone_collected", self, "collected_bone")
 	_gravity = gravity
 	$Timer.set_paused(true)
 	$Timer.set_wait_time(invincibility_frames)
@@ -130,7 +132,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	
-
+func collected_bone():
+	get_parent().acquire_bone()
 
 #Resets collision and sprite visibility when invincibility frames end.
 func _on_Timer_timeout():
