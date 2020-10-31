@@ -10,6 +10,7 @@ enum Anim{
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var coinScore = 0
 export (int) var speed = 200
 export (int) var gravity = 3000
 var _gravity
@@ -164,3 +165,8 @@ func _on_GUI_restart_level():
 
 func _on_Batty_stomped():
 	velocity.y = jump_power
+	
+func collectCoin():
+	coinScore = coinScore +1
+	print_debug("printed")
+	$GUI/Interface/TextureRect/RichTextLabel.collect_Coin(coinScore)

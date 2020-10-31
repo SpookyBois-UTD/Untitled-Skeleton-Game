@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-export (int) var coinScore = 0
+var coinScore = 0
 
 export (int) var speed = 200
 export (int) var gravity = 1000
@@ -97,5 +97,5 @@ func _on_GUI_restart_level():
 func collectCoin():
 	coinScore = coinScore +1
 	print_debug("printed")
-	emit_signal("collect_Coin",coinScore)
+	$GUI/Interface/TextureRect/RichTextLabel.collect_Coin(coinScore)
 

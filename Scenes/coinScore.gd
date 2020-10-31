@@ -12,7 +12,7 @@ func _ready():
 
 
 func collect_Coin(value):
-	text = value
+	text = str (value)
 	print_debug("here")
 	
 func _on_TextureRect_collect_Coin(value):

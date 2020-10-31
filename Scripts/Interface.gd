@@ -5,7 +5,7 @@ extends Control
 # var a = 2
 # var b = "text"
 signal health_changed(health)
-signal collect_Coin(value)
+signal collect_Coin(coinScore)
 onready var game_over_screen = $Interface/GameOver
 signal restart_level()
 
@@ -20,9 +20,9 @@ func _ready():
 func _on_SkeletonOneLeg_health_changed(health):
 	emit_signal("health_changed", health)
 	
-func _on_SkeletonHead_collect_Coin(value):
+func _on_SkeletonHead_collect_Coin(coinScore):
 	print_debug("here")
-	emit_signal("collect_Coin", value)
+	emit_signal("collect_Coin", coinScore)
 
 
 func _on_SkeletonOneLeg_game_over(level):
