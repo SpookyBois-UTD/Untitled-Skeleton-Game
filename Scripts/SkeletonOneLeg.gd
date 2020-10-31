@@ -25,6 +25,8 @@ var health = 3
 signal health_changed(health)
 var level = "res://Scenes/Test.tscn" # Change scene for each skeleton phase
 signal game_over(level)
+var boneNode = get_tree().get_root().find_node("Bone", true, false)
+boneNode.connect("bone_collected", self, "collected_bone")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -130,7 +132,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	
-
+func collected_bone():
+	get_parent().acquire_bone()
 
 #Resets collision and sprite visibility when invincibility frames end.
 func _on_Timer_timeout():

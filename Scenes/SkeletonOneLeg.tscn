@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/SosJWaQ.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/SkeletonOneLeg.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Player/IdleBack.tres" type="Animation" id=4]
 [ext_resource path="res://Player/Walking.tres" type="Animation" id=5]
 [ext_resource path="res://Player/Climbing.tres" type="Animation" id=6]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.6048, 20.8978 )
@@ -15,7 +16,11 @@ position = Vector2( 100, 100 )
 collision_layer = 2
 collision_mask = 2147483649
 script = ExtResource( 2 )
+speed = null
+gravity = null
 jump_power = -300
+
+[node name="GUI" parent="." instance=ExtResource( 7 )]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -39,4 +44,7 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+[connection signal="game_over" from="." to="GUI" method="_on_SkeletonOneLeg_game_over"]
+[connection signal="health_changed" from="." to="GUI" method="_on_SkeletonOneLeg_health_changed"]
+[connection signal="restart_level" from="GUI" to="." method="_on_GUI_restart_level"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

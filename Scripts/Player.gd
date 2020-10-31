@@ -48,9 +48,9 @@ func _ready():
 
 func get_input():
 	if Input.is_action_just_pressed("debug_level_up"):
-		aquire_bone()
+		acquire_bone()
 
-func aquire_bone():
+func acquire_bone():
 	if(status == limbs.HEAD):
 			player_pos = get_child(0).get_global_position()
 			scene = load("res://Scenes/SkeletonOneLeg.tscn")
@@ -87,3 +87,4 @@ func aquire_bone():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_input()
+

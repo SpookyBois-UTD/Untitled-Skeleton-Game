@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/IdleSide.tres" type="Animation" id=1]
 [ext_resource path="res://Scripts/SkeletonTwoLeg.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Player/Walking.tres" type="Animation" id=4]
 [ext_resource path="res://Player/Climbing.tres" type="Animation" id=5]
 [ext_resource path="res://Player/SosJWaQ.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.6349, 21.588 )
@@ -40,4 +41,9 @@ anims/Walking = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="GUI" parent="." instance=ExtResource( 7 )]
+[connection signal="game_over" from="." to="GUI" method="_on_SkeletonTwoLeg_game_over"]
+[connection signal="health_changed" from="." to="GUI" method="_on_SkeletonTwoLeg_health_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="restart_level" from="GUI" to="." method="_on_GUI_restart_level"]

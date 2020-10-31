@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/Cal_head_idle.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/SkeletonHead.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14.8754, 14.7043 )
@@ -43,4 +44,9 @@ anims/Hopping = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="GUI" parent="." instance=ExtResource( 3 )]
+[connection signal="game_over" from="." to="GUI" method="_on_SkeletonHead_game_over"]
+[connection signal="health_changed" from="." to="GUI" method="_on_SkeletonHead_health_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="restart_level" from="GUI" to="." method="_on_GUI_restart_level"]

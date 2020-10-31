@@ -23,10 +23,10 @@ tracks/0/keys = {
 extents = Vector2( 25.8538, 6.41591 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 28.6691, 7.39807 )
+extents = Vector2( 28.6691, 9.78453 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 24.4506, 3.22206 )
+extents = Vector2( 15.962, 0.905753 )
 
 [node name="Batty" type="KinematicBody2D"]
 position = Vector2( 0.0491257, 0.0713577 )
@@ -46,7 +46,7 @@ autoplay = "fly"
 anims/fly = SubResource( 1 )
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4 )
+position = Vector2( 0, 2 )
 shape = SubResource( 2 )
 
 [node name="PlayerCollision" type="Area2D" parent="."]
@@ -54,7 +54,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
-position = Vector2( 0, 4 )
+position = Vector2( 0, 2 )
 shape = SubResource( 3 )
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -62,7 +62,8 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2( 0, -6.78954 )
+position = Vector2( 0, -8.78954 )
 shape = SubResource( 4 )
 [connection signal="body_entered" from="PlayerCollision" to="." method="_on_PlayerCollision_body_entered"]
+[connection signal="body_shape_entered" from="PlayerCollision" to="." method="_on_PlayerCollision_body_shape_entered"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_Hurtbox_body_entered"]

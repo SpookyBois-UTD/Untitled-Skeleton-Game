@@ -36,3 +36,43 @@ func _on_KinematicBody2D_health_changed(health):
 func _on_KinematicBody2D_game_over(level):
 	game_over_screen.show()
 
+
+
+func _on_Player_health_changed(health):
+	emit_signal("health_changed", health)
+
+
+func _on_Player_game_over(level):
+	game_over_screen.show()
+
+
+func _on_SkeletonHead_health_changed(health):
+	emit_signal("health_changed", health)
+
+
+func _on_SkeletonHead_game_over(level):
+	game_over_screen.show()
+
+
+func _on_SkeletonOneArm_health_changed(health):
+	emit_signal("health_changed", health)
+
+
+func _on_SkeletonOneArm_game_over(level):
+	game_over_screen.show()
+
+
+func _on_SkeletonTwoArm_health_changed(health):
+	emit_signal("health_changed", health)
+
+
+func _on_SkeletonTwoArm_game_over(level):
+	game_over_screen.show()
+
+
+func _on_SkeletonTwoLeg_health_changed(health):
+	emit_signal("health_changed", health)
+
+
+func _on_SkeletonTwoLeg_game_over(level):
+	game_over_screen.show()
