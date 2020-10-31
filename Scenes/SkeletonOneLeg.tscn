@@ -17,6 +17,8 @@ position = Vector2( 100, 100 )
 collision_layer = 2
 collision_mask = 2147483649
 script = ExtResource( 2 )
+speed = null
+gravity = null
 jump_power = -300
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
