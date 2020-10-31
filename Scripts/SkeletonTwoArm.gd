@@ -84,6 +84,10 @@ func Animate():
 
 func is_on_ladder(status : bool):
 	onLadder = status
+	
+func win():
+	$GUI/Interface/Win.visible = true
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
