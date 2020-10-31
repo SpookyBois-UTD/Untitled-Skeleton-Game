@@ -76,11 +76,11 @@ func Animate():
 	if(state == Anim.Climbing):
 		$AnimationPlayer.play("Climbing")
 	if(state == Anim.Walking):
-		$AnimationPlayer.play("Walking")
+		$AnimationPlayer.play("Two_Arm_Walking")
 	elif(state == Anim.ClimbingIdle):
 		$AnimationPlayer.play("IdleBack")
 	else:
-		$AnimationPlayer.play("IdleSide")
+		$AnimationPlayer.play("Two_Arm_Side_Idle")
 
 func is_on_ladder(status : bool):
 	onLadder = status
