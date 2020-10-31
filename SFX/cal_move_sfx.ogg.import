@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/cal_move_sfx.ogg-9b917d200f45714cf0d49e68e9d9877f.oggstr"
+path="res://.import/cal_move_sfx.ogg-a204065502747da8d79d43fc7d892552.oggstr"
 
 [deps]
 
-source_file="res://SFX/cal_move_sfx.ogg"
-dest_files=[ "res://.import/cal_move_sfx.ogg-9b917d200f45714cf0d49e68e9d9877f.oggstr" ]
+source_file="res://Sfx/cal_move_sfx.ogg"
+dest_files=[ "res://.import/cal_move_sfx.ogg-a204065502747da8d79d43fc7d892552.oggstr" ]
 
 [params]
 
