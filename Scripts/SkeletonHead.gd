@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 
+export (int) var coinScore = 0
+
 export (int) var speed = 200
 export (int) var gravity = 1000
 var velocity = Vector2()
@@ -8,6 +10,7 @@ var invincibility_frames = 1.5
 var faceRight = true
 
 var health = 3
+signal collect_Coin(coinScore)
 signal health_changed(health)
 var level = "res://Scenes/Test.tscn" # Change scene for each skeleton phase
 signal game_over(level)
@@ -89,3 +92,10 @@ func collected_bone():
 
 func _on_GUI_restart_level():
 	get_tree().change_scene(level)
+
+
+func collectCoin():
+	coinScore = coinScore +1
+	print_debug("printed")
+	emit_signal("collect_Coin",coinScore)
+
