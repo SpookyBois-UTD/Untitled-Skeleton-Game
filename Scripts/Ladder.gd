@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_ladder_body_entered(body):
-	if body.get_collision_layer_bit(1) && body.has_method("is_on_ladder"):
+	if body.get_collision_layer_bit(1) && body.has_method("is_on_ladder") && !(Input.is_action_pressed("player_up")||Input.is_action_pressed("player_down")):
 		print_debug("Entered")
 		body.is_on_ladder(true)
 
