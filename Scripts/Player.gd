@@ -87,3 +87,4 @@ func acquire_bone():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_input()
+
