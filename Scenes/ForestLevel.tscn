@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/ParallaxForest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/SkeletonTwoArm.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Scenes/ladder.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tiles/LadderTile.tres" type="TileSet" id=5]
 [ext_resource path="res://Music/Humerus_Harmony_Full.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/Pumpkin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=8]
 
 [node name="ForestLevel" type="Node2D"]
 __meta__ = {
@@ -92,3 +94,62 @@ The end!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Pumpkin" parent="." instance=ExtResource( 7 )]
+position = Vector2( 391.283, 783.952 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Coin" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 655.701, 725.192 )
+
+[node name="Coin2" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 721.847, 722.042 )
+
+[node name="Coin3" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 832.09, 762.359 )
+
+[node name="Coin4" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 936.034, 752.28 )
+
+[node name="Coin5" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 759.645, 762.359 )
+
+[node name="Coin6" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 596.485, 751.02 )
+
+[node name="Coin7" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 516.48, 712.592 )
+
+[node name="Coin8" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 667.041, 771.179 )
+
+[node name="Coin9" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 804.372, 711.962 )
+
+[node name="Coin10" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 868.05, 708.217 )
+
+[node name="Coin11" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 1001.4, 749.42 )
+
+[node name="Coin12" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 1084.56, 724.698 )
+
+[node name="Coin13" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 1151.23, 759.908 )
+
+[node name="Coin14" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 1293.57, 742.678 )
+
+[node name="Coin15" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 1352.75, 767.4 )
+
+[node name="Coin16" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 1493.59, 758.41 )
+
+[node name="Coin17" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 1525.81, 772.644 )
+
+[node name="Coin18" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 1525.81, 772.644 )
