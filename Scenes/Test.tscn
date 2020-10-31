@@ -66,6 +66,12 @@ position = Vector2( -17.8408, -47.55 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
 
+[node name="TextEdit" parent="GUI/Interface" index="0"]
+visible = false
+
+[node name="Health" parent="GUI/Interface" index="1"]
+visible = false
+
 [node name="Milk" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -83 )
 
