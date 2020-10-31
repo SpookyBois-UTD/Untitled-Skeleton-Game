@@ -3,6 +3,8 @@
 [ext_resource path="res://Scripts/Ladder.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/1ed85433afb10681f1a937d287892993.png" type="Texture" id=2]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.8007, 30.4951 )
 

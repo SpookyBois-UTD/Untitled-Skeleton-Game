@@ -8,6 +8,8 @@
 [ext_resource path="res://Player/SosJWaQ.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=7]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.6349, 21.588 )
 

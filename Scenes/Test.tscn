@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Milk.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ladder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Batty.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Pumpkin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Stuff.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Bone.tscn" type="PackedScene" id=8]
@@ -62,7 +63,7 @@ position = Vector2( 293.586, -104.652 )
 position = Vector2( 49.361, -79.0289 )
 
 [node name="Batty" parent="." instance=ExtResource( 4 )]
-position = Vector2( -17.8408, -47.55 )
+position = Vector2( -151.841, -187.55 )
 
 [node name="Milk" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -83 )
@@ -79,3 +80,6 @@ region_rect = Rect2( 401, 165, 32, 32 )
 
 [node name="Bone" parent="." instance=ExtResource( 8 )]
 position = Vector2( -126.81, -50.7238 )
+
+[node name="Pumpkin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0.841995, -51.7309 )

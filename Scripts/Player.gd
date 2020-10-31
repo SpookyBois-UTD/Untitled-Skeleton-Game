@@ -15,6 +15,7 @@ export (limbs) var status = limbs.HEAD
 var scene
 var player_body
 var player_pos
+export var level = "res://Scenes/SkeletonHead.tscn"
 
 
 # Called when the node enters the scene tree for the first time.

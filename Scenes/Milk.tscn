@@ -3,6 +3,8 @@
 [ext_resource path="res://Sprites/milk_placeholder.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Milk.gd" type="Script" id=2]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.2062, 13.3237 )
 

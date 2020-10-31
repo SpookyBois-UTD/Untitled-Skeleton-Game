@@ -4,6 +4,8 @@
 [ext_resource path="res://Scripts/SkeletonHead.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=3]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14.8754, 14.7043 )
 

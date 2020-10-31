@@ -41,9 +41,6 @@ func _process(delta):
 
 
 
-
-
-
-
-
-
+func _on_Player_Collision_body_entered(body):
+	if body.get_collision_layer_bit(1) && body.has_method("take_damage"):
+		body.take_damage()

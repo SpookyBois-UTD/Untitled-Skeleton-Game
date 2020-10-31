@@ -50,6 +50,5 @@ func _on_Hurtbox_body_entered(body):
 
 
 
-func _on_PlayerCollision_body_shape_entered(body_id, body, body_shape, local_shape):
-	if body.get_collision_layer_bit(1) && body.has_method("take_damage"):
-		body.take_damage()
+
+	
