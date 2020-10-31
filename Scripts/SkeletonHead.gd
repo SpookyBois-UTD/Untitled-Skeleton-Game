@@ -16,7 +16,8 @@ signal game_over(level)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var boneNode = get_tree().get_root().find_node("Bone", true, false)
-	boneNode.connect("bone_collected", self, "collected_bone")
+	if(boneNode != null):
+		boneNode.connect("bone_collected", self, "collected_bone")
 	$Timer.set_paused(true)
 	$Timer.set_wait_time(invincibility_frames)
 	$AnimationPlayer.set_current_animation("Hopping")
@@ -35,6 +36,7 @@ func get_input():
 		changeDir()
 		$AnimationPlayer.play("Hopping")
 	else:
+		$AnimationPlayer.seek(0.0, true)
 		$AnimationPlayer.stop()
 
 func move(direction : String):

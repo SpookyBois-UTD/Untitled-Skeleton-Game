@@ -25,11 +25,12 @@ var health = 3
 signal health_changed(health)
 var level = "res://Scenes/Test.tscn" # Change scene for each skeleton phase
 signal game_over(level)
-var boneNode = get_tree().get_root().find_node("Bone", true, false)
-boneNode.connect("bone_collected", self, "collected_bone")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var boneNode = get_tree().get_root().find_node("Bone", true, false)
+	if(boneNode != null):
+		boneNode.connect("bone_collected", self, "collected_bone")
 	_gravity = gravity
 	$Timer.set_paused(true)
 	$Timer.set_wait_time(invincibility_frames)
@@ -142,14 +143,11 @@ func _on_Timer_timeout():
 	set_collision_layer_bit(1, true)
 
 func Animate():
-	#if(state == Anim.Climbing):
-		#$AnimationPlayer.play("Climbing")
 	if(state == Anim.Walking):
-		$AnimationPlayer.play("Walking")
-	#elif(state == Anim.ClimbingIdle):
-		#$AnimationPlayer.play("IdleBack")
+		$AnimationPlayer.play("One_Leg_Walk")
 	else:
-		$AnimationPlayer.play("IdleSide")
+		$AnimationPlayer.seek(0.0, true)
+		$AnimationPlayer.stop(true)
 
 func changeDir():
 	if(faceRight):
