@@ -102,10 +102,11 @@ func last_scene(lvl):
 
 func next_scene(scene):
 	new_scene_dir = scene;
-
+	load_state();
 
 func _on_timer_timeout():
-	load_state();"
+	load_state();
+"
 
 [sub_resource type="Animation" id=2]
 length = 0.4
@@ -586,7 +587,6 @@ anims/Right-Left = SubResource( 12 )
 anims/Top-down = SubResource( 13 )
 
 [node name="canvas" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="cutoff" type="ColorRect" parent="canvas"]
 material = SubResource( 14 )
