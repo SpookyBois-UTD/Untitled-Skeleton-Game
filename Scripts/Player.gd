@@ -15,7 +15,7 @@ export (limbs) var status = limbs.HEAD
 var scene
 var player_body
 var player_pos
-export var level = "res://Scenes/SewerLevel.tscn" # Change this to the respective level scene
+export var level = "res://Scenes/ForestLevel.tscn" # Change this to the respective level scene
 
 
 # Called when the node enters the scene tree for the first time.

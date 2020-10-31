@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Transitions/Transitions.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MainGame.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/ParallaxForest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/ForestLevel.tscn" type="PackedScene" id=3]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource( 2 )
@@ -11,4 +11,4 @@ script = ExtResource( 2 )
 
 [node name="Levels" type="Node2D" parent="."]
 
-[node name="ForestBG" parent="Levels" instance=ExtResource( 3 )]
+[node name="ForestLevel" parent="Levels" instance=ExtResource( 3 )]

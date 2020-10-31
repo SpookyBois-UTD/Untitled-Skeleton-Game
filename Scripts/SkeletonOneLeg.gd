@@ -24,7 +24,7 @@ var velocity = Vector2()
 
 var health = 3
 signal health_changed(health)
-var level = "res://Scenes/Test.tscn" # Change scene for each skeleton phase
+var level = "res://Scenes/ForestLevel.tscn" # Change scene for each skeleton phase
 signal game_over(level)
 
 # Called when the node enters the scene tree for the first time.
