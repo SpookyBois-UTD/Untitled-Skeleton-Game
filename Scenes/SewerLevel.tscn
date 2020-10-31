@@ -1,11 +1,20 @@
+
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tiles/SewerTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/toNextLevel.tscn" type="PackedScene" id=2]
+
+
+
+
+
 [ext_resource path="res://Sprites/sewer_background.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/SewerLevel.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Bone.tscn" type="PackedScene" id=6]
+
+[ext_resource path="res://Tiles/SewerTileSet.tres" type="TileSet" id=7]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "sewer_background.png 0"
@@ -145,6 +154,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 136.177, 275.348 )
 
@@ -154,3 +164,8 @@ position = Vector2( 3494.05, 834.557 )
 [node name="Bone" parent="." instance=ExtResource( 6 )]
 position = Vector2( 409.363, 1083.11 )
 [connection signal="body_entered" from="toNextLevel" to="." method="_on_toNextLevel_body_entered"]
+
+
+[node name="Coin" parent="." instance=ExtResource( 8 )]
+position = Vector2( 197.396, 272.042 )
+
