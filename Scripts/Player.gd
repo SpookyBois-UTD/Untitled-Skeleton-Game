@@ -15,7 +15,7 @@ export (limbs) var status = limbs.HEAD
 var scene
 var player_body
 var player_pos
-export var level = "res://Scenes/SkeletonHead.tscn"
+export var level = "res://Scenes/SewerLevel.tscn" # Change this to the respective level scene
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,26 +25,31 @@ func _ready():
 		player_body = scene.instance()
 		add_child(player_body)
 		get_child(0).set_global_position(get_global_position())
+		player_body.level = level
 	elif(status == limbs.ONE_LEG):
 		scene = load("res://Scenes/SkeletonOneLeg.tscn")
 		player_body = scene.instance()
 		add_child(player_body)
 		get_child(0).global_position = self.get_global_position()
+		player_body.level = level
 	elif(status == limbs.TWO_LEGS):
 		scene = load("res://Scenes/SkeletonTwoLeg.tscn")
 		player_body = scene.instance()
 		add_child(player_body)
 		get_child(0).global_position = self.get_global_position()
+		player_body.level = level
 	elif(status == limbs.ONE_ARM):
 		scene = load("res://Scenes/SkeletonOneArm.tscn")
 		player_body = scene.instance()
 		add_child(player_body)
 		get_child(0).global_position = self.get_global_position()
+		player_body.level = level
 	elif(status == limbs.TWO_ARMS):
 		scene = load("res://Scenes/SkeletonTwoArm.tscn")
 		player_body = scene.instance()
 		add_child(player_body)
 		get_child(0).global_position = self.get_global_position()
+		player_body.level = level
 	print_debug(get_child(0).global_position)
 
 func get_input():
