@@ -1,4 +1,5 @@
-extends Area2D
+#extends Sprite
+extends Sprite
 
 
 # Declare member variables here. Examples:
@@ -9,13 +10,10 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
+	
+func collected_bone():
+	texture = load("res://.import/CalHeadWalkingFrame.png-b75de14bf149f2032848634b9db51bc8.stex")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Area2D_body_entered(body):
-	if body.get_collision_layer_bit(1) && body.torso == true:
-		body.win()

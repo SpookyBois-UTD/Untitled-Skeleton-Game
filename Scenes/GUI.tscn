@@ -127,23 +127,25 @@ margin_right = 472.0
 margin_bottom = 351.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Interface/Win/CenterContainer"]
-margin_left = 100.0
+margin_left = 67.0
 margin_top = 45.0
-margin_right = 364.0
+margin_right = 397.0
 margin_bottom = 299.0
 custom_constants/separation = 60
 
 [node name="Label" type="Label" parent="Interface/Win/CenterContainer/VBoxContainer"]
-margin_right = 264.0
+margin_right = 330.0
 margin_bottom = 149.0
 custom_fonts/font = SubResource( 1 )
-text = "Damn wow
-Nice<>"
+text = "Congrats! 
+You win!"
+align = 1
+valign = 1
 uppercase = true
 
 [node name="Restart Button" type="Button" parent="Interface/Win/CenterContainer/VBoxContainer"]
 margin_top = 209.0
-margin_right = 264.0
+margin_right = 330.0
 margin_bottom = 254.0
 custom_fonts/font = SubResource( 2 )
 text = "Try Again"

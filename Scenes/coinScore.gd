@@ -8,12 +8,13 @@ extends RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	collect_Coin(0)
 	pass # Replace with function body.
 
 
 func collect_Coin(value):
 	text = str (value)
-	print_debug("here")
+	#print_debug("here")
 	
 func _on_TextureRect_collect_Coin(value):
 	collect_Coin(value)

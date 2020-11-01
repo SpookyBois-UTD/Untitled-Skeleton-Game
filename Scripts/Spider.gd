@@ -154,7 +154,7 @@ func _physics_process(delta):
 #Check if the spider collides with the player, or another enemy
 func _on_EntityCollision_body_entered(body):
 	if body.get_collision_layer_bit(1) && body.has_method("take_damage"):
-		body.take_damage()
+		body.take_damage(1)
 	if body.get_collision_layer_bit(2) && body != self:
 		$Sprite.set_flip_h(!$Sprite.is_flipped_h())
 

@@ -102,15 +102,19 @@ func jump():
 
 #Called when player makes contact with an enemy
 #Invicibility will be activated if still "alive"
-func take_damage():
+func take_damage(num):
 	health -= 1
+	print_debug(health)
 	emit_signal("health_changed", health)
-	if health == 0:
+	if health < 0:
 		emit_signal("game_over", level)
-	elif health > 0:
+	elif health >= 0:
 		$Timer.set_paused(false)
 		$Timer.start(invincibility_frames)
-		set_collision_layer_bit(1, false)
+		set_collision_layer_bit(num, false)
+	print_debug("wrow              ", get_collision_layer_bit(2))
+	
+		
 		
 func heal():
 	if health < 3:
@@ -141,6 +145,7 @@ func collected_bone():
 func _on_Timer_timeout():
 	$Timer.stop()
 	$Sprite.set_visible(true)
+	set_collision_layer_bit(2, true)
 	set_collision_layer_bit(1, true)
 
 func Animate():
@@ -168,5 +173,4 @@ func _on_Batty_stomped():
 	
 func collectCoin():
 	coinScore = coinScore +1
-	print_debug("printed")
 	$GUI/Interface/TextureRect/RichTextLabel.collect_Coin(coinScore)

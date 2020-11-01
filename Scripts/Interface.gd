@@ -21,7 +21,7 @@ func _on_SkeletonOneLeg_health_changed(health):
 	emit_signal("health_changed", health)
 	
 func _on_SkeletonHead_collect_Coin(coinScore):
-	print_debug("here")
+	#print_debug("here")
 	emit_signal("collect_Coin", coinScore)
 
 

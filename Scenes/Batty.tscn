@@ -26,7 +26,7 @@ extents = Vector2( 25.8538, 6.41591 )
 extents = Vector2( 28.6691, 9.78453 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 15.962, 0.905753 )
+extents = Vector2( 22.7719, 0.905753 )
 
 [node name="Batty" type="KinematicBody2D"]
 position = Vector2( 0.0491257, 0.0713577 )

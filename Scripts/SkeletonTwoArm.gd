@@ -5,11 +5,11 @@ extends "res://Scripts/SkeletonOneArm.gd"
 # var a = 2
 # var b = "text"
 var onLadder = false
-
-
+var torso = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	._ready()
+	set_collision_layer_bit(2,true)
 
 func get_input():
 	velocity.x = 0
@@ -60,7 +60,6 @@ func climb(direction : String):
 		velocity.y = -100
 	elif(direction == "down"):
 		velocity.y = 100
-	
 	state = Anim.Climbing
 	Animate()
 
@@ -84,6 +83,10 @@ func Animate():
 
 func is_on_ladder(status : bool):
 	onLadder = status
+
+func collected_bone():
+	$Sprite.collected_bone()
+	torso = true
 	
 func win():
 	$GUI/Interface/Win.visible = true

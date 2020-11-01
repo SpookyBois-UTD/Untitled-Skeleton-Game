@@ -33,7 +33,7 @@ func _process(delta):
 #Checks to see if the player collision node has collided with a node on the player layer
 func _on_PlayerCollision_body_entered(body):
 	if body.get_collision_layer_bit(1) && body.has_method("take_damage"):
-		body.take_damage()
+		body.take_damage(1)
 
 
 func _on_Hurtbox_body_entered(body):

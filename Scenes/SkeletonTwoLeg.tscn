@@ -34,9 +34,6 @@ anims/IdleBack = ExtResource( 3 )
 anims/IdleSide = ExtResource( 1 )
 anims/Walking = ExtResource( 4 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
 [node name="GUI" parent="." instance=ExtResource( 7 )]
 [connection signal="game_over" from="." to="GUI" method="_on_SkeletonTwoLeg_game_over"]
 [connection signal="health_changed" from="." to="GUI" method="_on_SkeletonTwoLeg_health_changed"]

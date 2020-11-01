@@ -12,7 +12,7 @@ var faceRight = true
 var health = 3
 signal collect_Coin(coinScore)
 signal health_changed(health)
-var level = "res://Scenes/Test.tscn" # Change scene for each skeleton phase
+var level = "res://Scenes/ForestLevel.tscn" # Change scene for each skeleton phase
 signal game_over(level)
 
 
@@ -67,7 +67,7 @@ func take_damage():
 	elif health > 0:
 		$Timer.set_paused(false)
 		$Timer.start(invincibility_frames)
-		set_collision_layer_bit(1, false)
+		set_collision_layer_bit(2, false)
 
 func heal():
 	if health < 3:
@@ -86,8 +86,8 @@ func _on_Timer_timeout():
 	$Sprite.set_visible(true)
 	set_collision_layer_bit(1, true)
 
-func collected_bone():
-	get_parent().acquire_bone()
+#func collected_bone():
+#	get_parent().acquire_bone()
 
 
 func _on_GUI_restart_level():

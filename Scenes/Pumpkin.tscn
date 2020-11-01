@@ -3,19 +3,19 @@
 [ext_resource path="res://Scripts/Pumpkin.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/pumpkin_dark_bigger.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.0856, 9.3519 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8.35268, 11.1573 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 61.9127, 7.54838 )
+extents = Vector2( 55.1575, 7.54838 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 17.7336, 12.8251 )
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 12.6097
+height = 11.5064
 
 [node name="Pumpkin" type="KinematicBody2D"]
-position = Vector2( -0.157501, 0.269112 )
-collision_layer = 4
-collision_mask = 3
+position = Vector2( -0.367729, 3.21225 )
+collision_layer = 21
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -26,22 +26,27 @@ position = Vector2( 0.747916, 0.252074 )
 scale = Vector2( 0.480497, 0.480497 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
-shape = SubResource( 1 )
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2( 7.62939e-06, 1.99998 )
+rotation = 1.58714
+shape = SubResource( 4 )
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
+[node name="ActiveRegion" type="Area2D" parent="."]
+collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="ActivationCollision" type="CollisionShape2D" parent="ActiveRegion"]
 position = Vector2( 1, 0 )
 shape = SubResource( 2 )
 
-[node name="Player Collision" type="Area2D" parent="."]
+[node name="PlayerDamageArea" type="Area2D" parent="."]
+position = Vector2( 1.05112, -1.68179 )
+collision_layer = 30
+collision_mask = 2147483678
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Collision"]
-position = Vector2( 0, 1 )
+[node name="PlayerCollision\?" type="CollisionShape2D" parent="PlayerDamageArea"]
+position = Vector2( 0.210228, 3.52269 )
+rotation = 1.57077
 shape = SubResource( 3 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Player Collision" to="." method="_on_Player_Collision_body_entered"]
+[connection signal="body_entered" from="ActiveRegion" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="PlayerDamageArea" to="." method="_on_Player_Collision_body_entered"]
