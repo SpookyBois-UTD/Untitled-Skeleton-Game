@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/bones_weak.ogg-e9f559f557ac59597ad8a563ebc552e7.oggstr"
+path="res://.import/bones_weak.ogg-a4a74d873a98eb20a5996528dbd55a58.oggstr"
 
 [deps]
 
-source_file="res://SFX/bones_weak.ogg"
-dest_files=[ "res://.import/bones_weak.ogg-e9f559f557ac59597ad8a563ebc552e7.oggstr" ]
+source_file="res://Sfx/bones_weak.ogg"
+dest_files=[ "res://.import/bones_weak.ogg-a4a74d873a98eb20a5996528dbd55a58.oggstr" ]
 
 [params]
 

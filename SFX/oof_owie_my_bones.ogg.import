@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/oof_owie_my_bones.ogg-49c08a74203c5facdf91a8adb4304d4c.oggstr"
+path="res://.import/oof_owie_my_bones.ogg-f6e97d9aefb3b3a2879dbc3ffa9a7d45.oggstr"
 
 [deps]
 
-source_file="res://SFX/oof_owie_my_bones.ogg"
-dest_files=[ "res://.import/oof_owie_my_bones.ogg-49c08a74203c5facdf91a8adb4304d4c.oggstr" ]
+source_file="res://Sfx/oof_owie_my_bones.ogg"
+dest_files=[ "res://.import/oof_owie_my_bones.ogg-f6e97d9aefb3b3a2879dbc3ffa9a7d45.oggstr" ]
 
 [params]
 
